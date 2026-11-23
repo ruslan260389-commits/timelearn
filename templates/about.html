@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}О проекте{% endblock %}
+{% block content %}
+<h1>О проекте TimeLearn</h1>
+<div class="about-text">
+    <p><strong>TimeLearn</strong> — учебный проект для тех, кто хочет одновременно
+    освоить Python и научиться управлять своим временем.</p>
+
+    <h2>Что внутри?</h2>
+    <ul>
+        <li>📚 4 интерактивных урока Python</li>
+        <li>📋 Канбан-доска на Flask API</li>
+        <li>⏱ Pomodoro-таймер на JavaScript</li>
+        <li>🚀 Готовность к деплою на Render</li>
+    </ul>
+
+    <h2>Технологии</h2>
+    <ul>
+        <li>Python 3.11 + Flask</li>
+        <li>HTML5, CSS3, Vanilla JS</li>
+        <li>JSON-хранилище (легко заменить на PostgreSQL)</li>
+    </ul>
+
+    <h2>Как задеплоить</h2>
+    <p>Проект готов к Render: файлы <code>Procfile</code> и <code>render.yaml</code> уже включены.</p>
+</div>
+{% endblock %}

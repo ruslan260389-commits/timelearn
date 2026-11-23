@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ lesson.title }}{% endblock %}
+{% block content %}
+<a href="{{ url_for('lessons') }}" class="back">← К списку уроков</a>
+
+<article class="lesson-content">
+    <div class="lesson-header">
+        <span class="badge">{{ lesson.level }}</span>
+        <span class="badge secondary">⏱ {{ lesson.duration }}</span>
+    </div>
+    <h1>{{ lesson.title }}</h1>
+    <div class="lesson-body">
+        {{ lesson.content | safe }}
+    </div>
+</article>
+
+<div class="lesson-nav">
+    <a href="{{ url_for('kanban') }}" class="btn primary">Применить в канбане →</a>
+</div>
+{% endblock %}

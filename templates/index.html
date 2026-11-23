@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}TimeLearn — главная{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Учись программировать и управлять временем</h1>
+    <p>Практический курс Python с канбан-доской и таймером Pomodoro</p>
+    <div class="hero-buttons">
+        <a href="{{ url_for('lessons') }}" class="btn primary">Начать обучение</a>
+        <a href="{{ url_for('kanban') }}" class="btn secondary">Моя доска</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>📚 4 урока Python</h3>
+        <p>От переменных до функций — на примерах управления временем.</p>
+    </div>
+    <div class="feature-card">
+        <h3>📋 Канбан-доска</h3>
+        <p>Планируй задачи: To Do → Doing → Done.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🍅 Pomodoro</h3>
+        <p>25 минут фокуса, 5 минут отдыха — встроенный таймер.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Популярные уроки</h2>
+    <div class="lesson-grid">
+        {% for lesson in lessons %}
+        <a class="lesson-card" href="{{ url_for('lesson', lesson_id=lesson.id) }}">
+            <span class="badge">{{ lesson.level }}</span>
+            <h3>{{ lesson.title }}</h3>
+            <p>⏱ {{ lesson.duration }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

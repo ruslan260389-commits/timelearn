@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Pomodoro-таймер{% endblock %}
+{% block content %}
+<h1>🍅 Pomodoro-таймер</h1>
+<p class="subtitle">25 минут работы — 5 минут отдыха.</p>
+
+<div class="timer-box">
+    <div class="timer-display" id="timer">25:00</div>
+    <div class="timer-controls">
+        <button class="btn primary" id="start-btn">Старт</button>
+        <button class="btn secondary" id="reset-btn">Сброс</button>
+    </div>
+    <p id="timer-status" class="timer-status">Готов к работе</p>
+</div>
+{% endblock %}

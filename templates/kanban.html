@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Канбан-доска{% endblock %}
+{% block content %}
+<h1>Моя канбан-доска</h1>
+<p class="subtitle">Перетаскивай задачи между колонками или используй кнопки.</p>
+
+<div class="add-task-form">
+    <input type="text" id="task-text" placeholder="Новая задача..." maxlength="100">
+    <select id="task-priority">
+        <option value="low">Низкий</option>
+        <option value="medium" selected>Средний</option>
+        <option value="high">Высокий</option>
+    </select>
+    <button class="btn primary" id="add-btn">Добавить</button>
+</div>
+
+<div class="kanban" id="kanban">
+    <div class="column" data-col="todo">
+        <h2>📝 To Do</h2>
+        <div class="tasks" id="col-todo"></div>
+    </div>
+    <div class="column" data-col="doing">
+        <h2>⚙️ Doing</h2>
+        <div class="tasks" id="col-doing"></div>
+    </div>
+    <div class="column" data-col="done">
+        <h2>✅ Done</h2>
+        <div class="tasks" id="col-done"></div>
+    </div>
+</div>
+{% endblock %}

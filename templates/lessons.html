@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Уроки{% endblock %}
+{% block content %}
+<h1>Все уроки</h1>
+<p class="subtitle">Изучай Python по шагам — от простого к сложному.</p>
+
+<div class="lesson-grid">
+    {% for lesson in lessons %}
+    <a class="lesson-card" href="{{ url_for('lesson', lesson_id=lesson.id) }}">
+        <span class="badge">{{ lesson.level }}</span>
+        <h3>{{ lesson.title }}</h3>
+        <p>⏱ {{ lesson.duration }}</p>
+        <span class="cta">Перейти →</span>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
